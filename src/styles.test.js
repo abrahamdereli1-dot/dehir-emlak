@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 
 const css = readFileSync(fileURLToPath(new URL('./styles.css', import.meta.url)), 'utf8')
 const app = readFileSync(fileURLToPath(new URL('./App.jsx', import.meta.url)), 'utf8')
+const main = readFileSync(fileURLToPath(new URL('./main.jsx', import.meta.url)), 'utf8')
 
 describe('mobile navigation and CTA accessibility', () => {
   it('uses a fixed mobile menu overlay and readable dark text on gold CTAs', () => {
@@ -18,5 +19,6 @@ describe('mobile navigation and CTA accessibility', () => {
 
   it('imports React for the JSX runtime used by Vite', () => {
     expect(app).toContain("import React, { useEffect, useState } from 'react'")
+    expect(main).toContain("import React from 'react'")
   })
 })
