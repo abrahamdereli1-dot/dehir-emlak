@@ -15,4 +15,8 @@ describe('mobile navigation and CTA accessibility', () => {
   it('locks page scrolling while the mobile menu is expanded', () => {
     expect(app).toContain("document.body.style.overflow = menuOpen ? 'hidden' : ''")
   })
+
+  it('imports React for the JSX runtime used by Vite', () => {
+    expect(app).toContain("import React, { useEffect, useState } from 'react'")
+  })
 })

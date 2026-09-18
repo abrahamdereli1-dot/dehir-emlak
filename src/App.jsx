@@ -1,5 +1,5 @@
 import { ArrowUpRight, Building2, Check, ChevronRight, MapPin, Menu, Phone, ShieldCheck, Sprout, Store, Trees, X } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { featuredListings } from './content/listings'
 
 const phone = '05467431620'
