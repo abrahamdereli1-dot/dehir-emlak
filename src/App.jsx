@@ -1,5 +1,5 @@
 import { ArrowUpRight, Building2, Check, ChevronRight, MapPin, Menu, Phone, ShieldCheck, Sprout, Store, Trees, X } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { featuredListings } from './content/listings'
 
 const phone = '05467431620'
@@ -9,6 +9,11 @@ const valuationUrl = `https://wa.me/90${phone.slice(1)}?text=${encodeURIComponen
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   return (
     <>
